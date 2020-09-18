@@ -1,26 +1,19 @@
 #include <stdio.h>
-#include "stdlib.h"
+#include <stdlib.h>
+#include <assert.h>
+
 isPrime(int n);
+int isTwinPrime(int n);
 
 int main() {
 
-    // Track the
-    int numberGiven = 102;
-    int prePrime = numberGiven -2;
-    int postPrime = numberGiven+2;
-
-    for (int i=0; i < numberGiven; i++){
-        if (isPrime(i)){
-            printf("%d \n", i);
-        }
-    }
-
-
+    // Track the 3,14,19,23,31,0,5;
+    printf("%d", isTwinPrime(101));
 
     return EXIT_SUCCESS;
 }
 
-// Check prime from any n > 0
+// Check prime from any n > 0; return 1 for true or 0 for false
 int isPrime(int n){
 
     // check data validity n > 0
@@ -45,4 +38,37 @@ int isPrime(int n){
         }
     }
     return 1;
+}
+
+// Check if prime twin from any n > 0; return 1 for true or 0 for false
+int isTwinPrime(int numberGiven){
+
+    // Declare the bounces for the twins
+    int prePrime = numberGiven -2;
+    int postPrime = numberGiven+2;
+
+    // check data validity n > 0
+    if ( numberGiven <= 0){
+        return 0;
+    }
+
+    // Check if prime
+    if (isPrime(numberGiven)){
+
+        // Check if twin prime
+        if ( isPrime(prePrime) || isPrime(postPrime) ){
+            printf("at lease one is twin %d or %d from %d \n", prePrime, postPrime, numberGiven);
+            printf("Twin: Yes\n");
+            return 1;
+        } else{
+            printf("Only prime %d\n", numberGiven);
+            printf("Twin: No\n");
+            return 0;
+        }
+    } else{
+        printf("no prime %d \n", numberGiven);
+        printf("Twin: No\n");
+        return 0;
+    }
+
 }
