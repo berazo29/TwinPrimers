@@ -8,8 +8,15 @@ int isTwinPrime(int n);
 int main() {
 
     // Track the 3,14,19,23,31,0,5;
-    int n = 31;
+    int n = 512;
     printf("%d", isTwinPrime( n ) );
+
+    // Open and read the file
+    // Create a file for outputs
+    // Feed the data
+    // Check if Twin prime
+    // Write in the file for outputs
+    // Close the read and write files
 
     return EXIT_SUCCESS;
 }
