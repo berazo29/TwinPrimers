@@ -1,22 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 
-isPrime(int n);
+int isPrime(int n);
 int isTwinPrime(int n);
 
-int main() {
+int main(int argc, char* argv[argc+1]) {
 
-    // Track the 3,14,19,23,31,0,5;
-    int n = 512;
-    printf("%d", isTwinPrime( n ) );
+    // File name from the arguments
+    if ( argc != 2 ){
+        return EXIT_FAILURE;
+    }
 
-    // Open and read the file
-    // Create a file for outputs
-    // Feed the data
-    // Check if Twin prime
-    // Write in the file for outputs
-    // Close the read and write files
+    // Declare the read and write pointers
+    FILE* fp;
+
+    fp = fopen("test1.txt", "r");
+
+    // Check if the file unable to open
+    if (fp == NULL){
+        printf("Unable to read the file \n");
+        return EXIT_FAILURE;
+    }
+
+    // Get the number from file
+    int numberRead;
+
+    while (fscanf(fp, "%d\n", &numberRead ) != EOF ){
+
+        // Check for twin prime, print yes or no
+        if ( isTwinPrime( numberRead ) ){
+            printf("yes\n");
+        } else{
+            printf("no\n");
+        }
+    }
+
+    // Close the read file
+    fclose(fp);
 
     return EXIT_SUCCESS;
 }
@@ -24,13 +44,13 @@ int main() {
 // Check prime from any n > 0; return 1 for true or 0 for false
 int isPrime(int n){
 
-    // check data validity n > 0
-    if ( n <= 0){
+    // check data validity n > 1
+    if ( n <= 1){
         return 0;
     }
 
     // Return true or 1 for first primes 1, 2
-    if ( n == 1 || n == 2){
+    if ( n == 2){
         return 1;
     }
 
@@ -55,8 +75,8 @@ int isTwinPrime(int numberGiven){
     int prePrime = numberGiven - 2;
     int postPrime = numberGiven + 2;
 
-    // check data validity n > 0
-    if ( numberGiven <= 0){
+    // check data validity n > 2
+    if ( numberGiven < 3 ){
         return 0;
     }
 
