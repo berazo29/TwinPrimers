@@ -8,18 +8,18 @@ int main(int argc, char* argv[argc+1]) {
 
     // File name from the arguments
     if ( argc != 2 ){
-        return EXIT_FAILURE;
+        return EXIT_SUCCESS;
     }
 
     // Declare the read and write pointers
     FILE* fp;
 
-    fp = fopen("test1.txt", "r");
+    fp = fopen(argv[1], "r");
 
     // Check if the file unable to open
     if (fp == NULL){
         printf("Unable to read the file \n");
-        return EXIT_FAILURE;
+        return EXIT_SUCCESS;
     }
 
     // Get the number from file
