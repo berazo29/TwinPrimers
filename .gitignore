@@ -191,5 +191,6 @@ Temporary Items
 # Local
 
 .idea/
+/build
 test1.txt
 result1.txt
