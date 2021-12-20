@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.0)
 project(TwinNumber C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(TwinNumber main.c)
+add_executable(twin main.c)
