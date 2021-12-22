@@ -7,7 +7,7 @@ Read from a file containing numbers and print if the number is a twin prime and 
 
 1. Clone the repo
 ```git
-git clone https://github.com/berazo29/expressionMatching.git
+git clone https://github.com/berazo29/twinPrimers.git
 ```
 2. Go inside the project
 ```sh
