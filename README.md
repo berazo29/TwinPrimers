@@ -1,5 +1,5 @@
 # TwinPrimers
-Read from a file containing numbers and print if the number is a twin prime and printed to the console.
+Read from a file containing numbers and print if the number is a twin prime.
 
 ## Installation:
 
