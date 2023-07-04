@@ -8,7 +8,7 @@ int main(int argc, char* argv[argc+1]) {
 
     // File name from the arguments
     if ( argc != 2 ){
-        printf("Two arguments are required.\n");
+        printf("File is required.\n");
         return EXIT_FAILURE;
     }
 
