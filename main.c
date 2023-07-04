@@ -8,7 +8,7 @@ int main(int argc, char* argv[argc+1]) {
 
     // File name from the arguments
     if ( argc != 2 ){
-        printf("File is required.\n");
+        printf("Please insert only a valid file.\n");
         return EXIT_FAILURE;
     }
 
