@@ -8,7 +8,8 @@ int main(int argc, char* argv[argc+1]) {
 
     // File name from the arguments
     if ( argc != 2 ){
-        return EXIT_SUCCESS;
+        printf("Two arguments are required.\n");
+        return EXIT_FAILURE;
     }
 
     // Declare the read and write pointers
@@ -18,8 +19,8 @@ int main(int argc, char* argv[argc+1]) {
 
     // Check if the file unable to open
     if (fp == NULL){
-        printf("Unable to read the file \n");
-        return EXIT_SUCCESS;
+        printf("Unable to read the file.\n");
+        return EXIT_FAILURE;
     }
 
     // Get the number from file
